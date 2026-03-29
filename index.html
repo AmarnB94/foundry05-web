@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundry05 — Software Development & Digital Solutions</title>
+    <meta name="description" content="Foundry05 is an Australian software development studio building modern digital products and services.">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --color-bg: #fafafa;
+            --color-surface: #ffffff;
+            --color-text: #1a1a1a;
+            --color-text-secondary: #555;
+            --color-accent: #1d4ed8;
+            --color-accent-light: #eff6ff;
+            --color-border: #e5e7eb;
+            --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-text);
+            background: var(--color-bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Nav */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+        }
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--color-text);
+            text-decoration: none;
+        }
+        .logo span { color: var(--color-accent); }
+        nav a.nav-link {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-left: 2rem;
+            transition: color 0.2s;
+        }
+        nav a.nav-link:hover { color: var(--color-accent); }
+
+        /* Hero */
+        .hero {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 6rem 2rem 4rem;
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.25rem);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            max-width: 700px;
+        }
+        .hero p {
+            margin-top: 1.25rem;
+            font-size: 1.125rem;
+            color: var(--color-text-secondary);
+            max-width: 560px;
+            line-height: 1.7;
+        }
+
+        /* Services */
+        .services {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 2rem 5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+        .card h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .card p {
+            font-size: 0.925rem;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+
+        /* About */
+        .about {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 2rem 5rem;
+        }
+        .about h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+        .about p {
+            color: var(--color-text-secondary);
+            max-width: 640px;
+            line-height: 1.7;
+        }
+        .about p + p { margin-top: 1rem; }
+
+        /* Divider */
+        .divider {
+            max-width: 1100px;
+            margin: 0 auto;
+            border: none;
+            border-top: 1px solid var(--color-border);
+        }
+
+        /* Footer */
+        footer {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+            font-size: 0.875rem;
+            color: var(--color-text-secondary);
+        }
+        footer a {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+        footer a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="/" class="logo">foundry<span>05</span></a>
+    <div>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1>We build software that works.</h1>
+    <p>Foundry05 is an Australian software development studio. We design and build mobile apps, web platforms, and the backend systems that power them.</p>
+</section>
+
+<hr class="divider">
+
+<section class="services" id="services">
+    <div class="card">
+        <h3>Mobile Development</h3>
+        <p>Native and cross-platform mobile applications for iOS and Android, built with performance and usability at the core.</p>
+    </div>
+    <div class="card">
+        <h3>Web Applications</h3>
+        <p>Modern, responsive web applications and platforms — from internal tools to customer-facing products.</p>
+    </div>
+    <div class="card">
+        <h3>Cloud &amp; Infrastructure</h3>
+        <p>Scalable backend services, APIs, and cloud infrastructure designed for reliability and efficiency.</p>
+    </div>
+</section>
+
+<hr class="divider">
+
+<section class="about" id="about">
+    <h2>About Foundry05</h2>
+    <p>Foundry05 is a software development company based in Australia. We work with businesses of all sizes to bring digital products from concept to launch, and to maintain and evolve them over time.</p>
+    <p>Our focus is on clean engineering, clear communication, and delivering real value — not just code.</p>
+</section>
+
+<hr class="divider">
+
+<footer id="contact">
+    <span>&copy; 2026 Foundry05. All rights reserved.</span>
+    <span>Get in touch: <a href="mailto:admin@foundry05.com.au">admin@foundry05.com.au</a></span>
+</footer>
+
+</body>
+</html>
