@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foundry05 — Software Development & Digital Solutions</title>
+    <title>Foundry05 - Software Development & Digital Solutions</title>
     <meta name="description" content="Foundry05 is an Australian software development studio building modern digital products and services.">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
-            --color-bg: #fafafa;
-            --color-surface: #ffffff;
-            --color-text: #1a1a1a;
-            --color-text-secondary: #555;
-            --color-accent: #1d4ed8;
-            --color-accent-light: #eff6ff;
-            --color-border: #e5e7eb;
+            --color-bg: #0f0f0f;
+            --color-surface: #1a1a1a;
+            --color-text: #f0f0f0;
+            --color-text-secondary: #a0a0a0;
+            --color-accent: #e87c1e;
+            --color-accent-light: #2a1a0a;
+            --color-border: #2a2a2a;
             --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
         }
 
@@ -37,7 +37,7 @@
             padding: 1.5rem 2rem;
         }
         .logo {
-            font-size: 1.25rem;
+            font-size: 1.75rem;
             font-weight: 700;
             letter-spacing: -0.02em;
             color: var(--color-text);
@@ -131,9 +131,8 @@
         footer {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 2.5rem 2rem 3rem;
+            padding: 1.25rem 2rem 2rem;
             display: flex;
-            flex-wrap: wrap;
             justify-content: space-between;
             align-items: baseline;
             gap: 1rem;
@@ -145,12 +144,44 @@
             text-decoration: none;
         }
         footer a:hover { text-decoration: underline; }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        nav { animation: fadeIn 0.8s ease both; }
+        .hero h1 { animation: fadeUp 0.7s ease 0.15s both; }
+        .hero p { animation: fadeUp 0.7s ease 0.3s both; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card { transition: border-color 0.25s ease, transform 0.25s ease; }
+        .card:hover {
+            border-color: var(--color-accent);
+            transform: translateY(-4px);
+        }
+
+        footer a { transition: color 0.2s ease; }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="/" class="logo">foundry<span>05</span></a>
+    <a href="/" class="logo">foundry<span>05</span>.</a>
     <div>
         <a href="#services" class="nav-link">Services</a>
         <a href="#about" class="nav-link">About</a>
@@ -165,14 +196,14 @@
 
 <hr class="divider">
 
-<section class="services" id="services">
+<section class="services reveal" id="services">
     <div class="card">
         <h3>Mobile Development</h3>
         <p>Native and cross-platform mobile applications for iOS and Android, built with performance and usability at the core.</p>
     </div>
     <div class="card">
         <h3>Web Applications</h3>
-        <p>Modern, responsive web applications and platforms — from internal tools to customer-facing products.</p>
+        <p>Modern, responsive web applications and platforms - from internal tools to customer-facing products.</p>
     </div>
     <div class="card">
         <h3>Cloud &amp; Infrastructure</h3>
@@ -182,18 +213,24 @@
 
 <hr class="divider">
 
-<section class="about" id="about">
+<section class="about reveal" id="about">
     <h2>About Foundry05</h2>
     <p>Foundry05 is a software development company based in Australia. We work with businesses of all sizes to bring digital products from concept to launch, and to maintain and evolve them over time.</p>
-    <p>Our focus is on clean engineering, clear communication, and delivering real value — not just code.</p>
+    <p>Our focus is on clean engineering, clear communication, and delivering real value - not just code.</p>
 </section>
 
 <hr class="divider">
 
-<footer id="contact">
-    <span>&copy; 2026 Foundry05. All rights reserved.</span>
-    <span>Get in touch: <a href="mailto:admin@foundry05.com.au">admin@foundry05.com.au</a></span>
+<footer class="reveal" id="contact">
+    <span>&copy; 2026 Foundry05 Pty Ltd &middot; ACN 696 646 769</span>
+    <span><a href="mailto:admin@foundry05.com.au">admin@foundry05.com.au</a></span>
 </footer>
 
+<script>
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
