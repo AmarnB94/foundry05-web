@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-label="foundry05 app icon">
+  <rect width="320" height="240" rx="40" ry="40" fill="#0f0f0f"></rect>
+  <g transform="translate(64, 75)">
+    <path d="M 8 28 L 8 10 L 26 10" fill="none" stroke="#e87c1e" stroke-width="6"></path>
+    <g font-family="-apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, &#39;Helvetica Neue&#39;, Arial, sans-serif" font-weight="700" font-size="60" letter-spacing="-3">
+      <text x="20" y="86" fill="#f0f0f0">f</text>
+      <text x="44" y="86" fill="#888888">/</text>
+      <text x="68" y="86" fill="#e87c1e">05</text>
+    </g>
+  </g>
+</svg>

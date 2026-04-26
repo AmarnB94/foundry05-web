@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foundry05 - Software Development & Digital Solutions</title>
     <meta name="description" content="Foundry05 is an Australian software development studio building modern digital products and services.">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/app-icon.svg">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -38,13 +40,14 @@
             padding: 1.5rem 2rem;
         }
         .logo {
-            font-size: 1.75rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            color: var(--color-text);
+            display: inline-flex;
+            align-items: center;
             text-decoration: none;
         }
-        .logo span { color: var(--color-accent); }
+        .logo img {
+            height: 32px;
+            display: block;
+        }
         nav a.nav-link {
             color: var(--color-text-secondary);
             text-decoration: none;
@@ -184,7 +187,7 @@
         /* Mobile */
         @media (max-width: 640px) {
             nav { padding: 1.25rem 1.25rem; }
-            .logo { font-size: 1.4rem; }
+            .logo img { height: 26px; }
             nav a.nav-link { margin-left: 1.25rem; font-size: 0.8rem; }
 
             .hero { padding: 3.5rem 1.25rem 2.5rem; }
@@ -206,7 +209,7 @@
 <body>
 
 <nav>
-    <a href="/" class="logo">foundry<span>05</span>.</a>
+    <a href="/" class="logo" aria-label="Foundry05"><img src="assets/lockup.svg" alt="foundry05"></a>
     <div>
         <a href="#services" class="nav-link">Services</a>
         <a href="#about" class="nav-link">About</a>
@@ -223,15 +226,15 @@
 
 <section class="services reveal" id="services">
     <div class="card">
-        <h3>Mobile Development</h3>
+        <h3>Mobile development</h3>
         <p>Native and cross-platform mobile applications for iOS and Android, built with performance and usability at the core.</p>
     </div>
     <div class="card">
-        <h3>Web Applications</h3>
+        <h3>Web applications</h3>
         <p>Modern, responsive web applications and platforms - from internal tools to customer-facing products.</p>
     </div>
     <div class="card">
-        <h3>Cloud &amp; Infrastructure</h3>
+        <h3>Cloud &amp; infrastructure</h3>
         <p>Scalable backend services, APIs, and cloud infrastructure designed for reliability and efficiency.</p>
     </div>
 </section>
